@@ -34,16 +34,19 @@ export default function Header(props) {
             </ul>
             <div className="form-check form-switch">
               <input
-                className="form-check-input"
+                className="form-check-input mx-0"
                 type="checkbox"
                 value=""
                 id="checkNativeSwitch"
+                onClick={props.toggleMode}
               />
               <label
-                className="form-check-label text-white mx-2"
+                className={`form-check-label text-${
+                  props.mode === "light" ? "dark" : "light"
+                } mx-3`}
                 htmlFor="checkNativeSwitch"
               >
-                Enable Dark Mode
+                Enable {props.mode==='light'?'Dark':'Light'} Mode
               </label>
             </div>
             <form className="d-flex" role="search">
